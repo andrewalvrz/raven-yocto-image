@@ -48,7 +48,7 @@ The build process generates a **custom Linux image** for the Raspberry Pi 4:
 
 ---
 
-##Final Design Implementation
+## Final Design Implementation
 
 ```mermaid
 flowchart TD
