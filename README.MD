@@ -32,8 +32,23 @@ The build process generates a **custom Linux image** for the Raspberry Pi 4:
    ```bash
    bitbake core-image-minimal
 
+2. **Raven Custom Image**  
+   The `raven-image` is the fully featured image for the **Raven Rocket avionics system**.  
+   While the minimal image only provides a basic Linux environment to ensure the system can boot, the `raven-image` includes all tools, scripts, and Python packages required for the rocket's operations, such as:
+
+   - **OTA Listener**: Receives and executes remote commands via MQTT.
+   - **Telemetry Logger**: Captures and logs data from sensors and communication devices (e.g., LoRa modules, IMU, GPS).
+   - **Python Tools**: OpenCV, NumPy, PySerial, Paho-MQTT for payload control and data processing.
+   - **Utilities**: curl, socat, screen, vim, git for debugging, monitoring, and maintenance.
+   - **SSH Server**: Enables remote access for debugging and updates.
+
+   Build command:  
+   ```bash
+   bitbake raven-image
+
 ---
 
+##Final Design Implementation
 
 ```mermaid
 flowchart TD
