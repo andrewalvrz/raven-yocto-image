@@ -35,11 +35,14 @@ The build process generates a **custom Linux image** for the Raspberry Pi 4:
 ---
 
 
+```mermaid
 flowchart TD
-    L1[meta] --> L2[meta-poky]
-    L1 --> L3[meta-yocto-bsp]
-    L1 --> L4[meta-raven]
-    L4 --> Img[raven-image]
-    Img --> SD[SD Card]
-    SD --> Pi[Raspberry Pi Boots]
-
+    A[Yocto Build on Host PC] --> B[Generate raven-image]
+    B --> C[Flash SD Card]
+    C --> D[Raspberry Pi Boots Custom Image]
+    D --> E[OTA Listener Active]
+    D --> F[Telemetry Logger Active]
+    E -->|MQTT Commands| PiPayload[Execute Commands on Payload]
+    F -->|Logs Data| LogFile[Telemetry Log]
+    G[Ground Station] -->|Send MQTT Commands| E
+    F -->|Upload Data| G
