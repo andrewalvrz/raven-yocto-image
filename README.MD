@@ -1,4 +1,4 @@
-# Raven Yocto Avionics Project
+# Raven Yocto Avionics 
 
 ## Overview
 
