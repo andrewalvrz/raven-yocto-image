@@ -32,6 +32,8 @@ The build process generates a **custom Linux image** for the Raspberry Pi 4:
    ```bash
    bitbake core-image-minimal
 
+---
+
 
 flowchart TD
     A[Yocto Build on Host PC] --> B[Generate raven-image]
